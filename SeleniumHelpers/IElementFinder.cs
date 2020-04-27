@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using OpenQA.Selenium;
+
+namespace TestStack.Seleno.PageObjects.Actions
+{
+    /// <summary>
+    /// Provides an API to find elements on the page.
+    /// </summary>
+    public interface IElementFinder
+    {
+        /// <summary>
+        /// Locate an element using a Selenium Web Driver expression and return the <see cref="IWebElement"/> corresponding to that element.
+        /// Throws an exception if the element isn't found.
+        /// </summary>
+        /// <example>
+        /// Find.Element(By.Id("helloworld"))
+        /// </example>
+        /// <param name="findExpression">Selenium Web Driver expression to find an element</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the element to become available</param>
+        /// <exception cref="NoSuchElementException">When the element isn't found</exception>
+        /// <returns>The <see cref="IWebElement"/> representing the element</returns>
+        IWebElement Element(By findExpression, TimeSpan maxWait = default(TimeSpan));
+
+        /// <summary>
+        /// Locate an element using a jQuery expression and return the <see cref="IWebElement"/> corresponding to that element.
+        /// Throws an exception if the element isn't found.
+        /// </summary>
+        /// <example>
+        /// Find.Element(By.jQuery("#helloworld"))
+        /// </example>
+        /// <param name="jQueryFindExpression">jQuery expression to find an element</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the element to become available</param>
+        /// <exception cref="NoSuchElementException">When the element isn't found</exception>
+        /// <returns>The <see cref="IWebElement"/> representing the element</returns>
+        IWebElement Element(Locators.By.jQueryBy jQueryFindExpression, TimeSpan maxWait = default(TimeSpan));
+
+        /// <summary>
+        /// Locates multiple elements using a Selenium Web Driver expression and return the list of<see cref="IWebElement"/>s that match.
+        /// Returns an empty list of no elements found
+        /// </summary>
+        /// <example>
+        /// Find.Elements(By.ClassName("helloworld"))
+        /// </example>
+        /// <param name="findExpression">Selenium Web Driver expression to find elements</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the elements to become available</param>
+        /// <returns>The <see cref="IWebElement"/>s that matched the search</returns>
+        IEnumerable<IWebElement> Elements(By findExpression, TimeSpan maxWait = default(TimeSpan));
+
+        /// <summary>
+        /// Locates multiple elements using a jQuery expression and return the list of<see cref="IWebElement"/>s that match.
+        /// Returns an empty list of no elements found
+        /// </summary>
+        /// <example>
+        /// Find.Elements(By.jQuery("#helloworld"))
+        /// </example>
+        /// <param name="jQueryFindExpression">jQuery expression to find elements</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the elements to become available</param>
+        /// <returns>The <see cref="IWebElement"/>s that matched the search</returns>
+        IEnumerable<IWebElement> Elements(Locators.By.jQueryBy jQueryFindExpression, TimeSpan maxWait = default(TimeSpan));
+
+        /// <summary>
+        /// Locate an element that may or not be present using a Selenium Web Driver expression and return the <see cref="IWebElement"/> corresponding to that element.
+        /// Returns null if the element isn't found.
+        /// </summary>
+        /// <example>
+        /// Find.OptionalElement(By.Id("helloworld"))
+        /// </example>
+        /// <param name="findExpression">Selenium Web Driver expression to find an element</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the element to become available</param>
+        /// <returns>The <see cref="IWebElement"/> representing the element</returns>
+        IWebElement OptionalElement(By findExpression, TimeSpan maxWait = default(TimeSpan));
+
+        /// <summary>
+        /// Locate an element that may or not be present using a jQuery expression and return the <see cref="IWebElement"/> corresponding to that element.
+        /// Returns null if the element isn't found.
+        /// </summary>
+        /// <example>
+        /// Find.OptionalElement(By.jQuery("#helloworld"))
+        /// </example>
+        /// <param name="jQueryFindExpression">jQuery expression to find an element</param>
+        /// <param name="maxWait">Maximum amount of time to wait for the element to become available</param>
+        /// <returns>The <see cref="IWebElement"/> representing the element</returns>
+        IWebElement OptionalElement(Locators.By.jQueryBy jQueryFindExpression, TimeSpan maxWait = default(TimeSpan));
+
+    }
+}

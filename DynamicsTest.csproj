@@ -31,6 +31,7 @@
     <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Quartz" Version="3.0.7" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="WebDriverManager" Version="2.9.1" />

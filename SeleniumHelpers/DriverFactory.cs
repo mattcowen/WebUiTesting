@@ -41,10 +41,11 @@ namespace DynamicsTest.SeleniumHelpers
             {
                 case DriverToUse.EdgeDev:
                     //new DriverManager().SetUpDriver(
-                    //    "https://msedgedriver.azureedge.net/83.0.478.10/edgedriver_win64.zip",
+                    //    "https://msedgedriver.azureedge.net/84.0.488.1/edgedriver_win64.zip",
                     //    Path.Combine(Directory.GetCurrentDirectory(), "msedgedriver.exe"),
                     //    "msedgedriver.exe"
                     //);
+                    
                     var options = new EdgeOptions();
                     options.UseChromium = true;
                     options.BinaryLocation = @"C:\Program Files (x86)\Microsoft\Edge Dev\Application\msedge.exe";
